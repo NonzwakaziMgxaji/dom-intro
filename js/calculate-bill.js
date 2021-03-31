@@ -1,8 +1,8 @@
-//get a reference to the calculate button
+//get reference to the calculate button
 var calculateBtn = document.querySelector(".calculateBtn");
-//get a reference to the billTotal element
+//get reference to the billTotal element
 var billTotalElem = document.querySelector(".billTotal");
-//get a reference to the billString
+//get reference to the billString
 var billStringElem = document.querySelector(".billString");
 
 //create the function that will be called when the calculate button is pressed
@@ -28,12 +28,13 @@ function calculateBtnClicked() {
             billTotal += 0.75;
         }
     }
-    //round to two decimals
+    //round off to two decimals
     var roundedBillTotal = billTotal.toFixed(2);
     billTotalElem.innerHTML = roundedBillTotal;
     colourChange(roundedBillTotal);
 }
 
+//colour change
 var colourChange = function (roundedBillTotal) {
     if (roundedBillTotal <= 20.00) {
         billTotalElem.classList.remove("warning");
@@ -41,7 +42,7 @@ var colourChange = function (roundedBillTotal) {
     } else if (roundedBillTotal > 20.00 && roundedBillTotal <= 30.00) {
         billTotalElem.classList.remove("danger");
         billTotalElem.classList.add("warning");
-    } else if (roundedBillTotal > 30.00){
+    } else if (roundedBillTotal > 30.00) {
         billTotalElem.classList.remove("warning");
         billTotalElem.classList.add("danger");
     }
