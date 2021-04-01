@@ -34,6 +34,7 @@ updateSettings.addEventListener("click", function(){
     smsSetting = smsCostSetting.value;
     warningSetting = warningLevelSetting.value;
     criticalSetting = criticalLevelSetting.value;
+    colors(bill);
 });
 
 //add an event listener for when the add button is pressed
@@ -64,8 +65,10 @@ addTheBillBtn.addEventListener("click", function(){
     smsTotalSettings.innerHTML = smsTotal.toFixed(2);
     bill = callTotal + smsTotal;
     totalSettings.innerHTML = bill.toFixed(2);
-    
+    colors(bill);
+});
     //change colours
+    var colors = function (bill) {
     if (bill < parseFloat(warningLevelSetting.value)){
         totalSettings.classList.remove("warning");
         totalSettings.classList.remove("danger");
@@ -74,7 +77,6 @@ addTheBillBtn.addEventListener("click", function(){
         totalSettings.classList.add("warning");
     }
     else if (bill >= parseFloat(criticalLevelSetting.value)) {
-        // totalSettings.classList.remove("warning");
         totalSettings.classList.add("danger");
     }
-});
+}
