@@ -27,9 +27,9 @@ function textBillTotal(){
     }
     
     //update the totals that is displayed on the screen.
-    callTotalOneElem.innerHTML = callTotal.toFixed(2);
-    smsTotalOneElem.innerHTML = smsTotal.toFixed(2);
-    var totalCost = callTotal + smsTotal;
+    callTotalOneElem.innerHTML = callTot.toFixed(2);
+    smsTotalOneElem.innerHTML = smsTot.toFixed(2);
+    var totalCost = callTot + smsTot;
     totalOneElem.innerHTML = totalCost.toFixed(2);
 
     // color the total based on the criteria
