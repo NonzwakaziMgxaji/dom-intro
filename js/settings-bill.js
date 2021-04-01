@@ -72,4 +72,8 @@ addBillBtn.addEventListener("click", function(){
     else if (billTotal >= parseFloat(criticalLevelSetting.value)) {
         totalSettings.classList.add("danger");
     }
+    else {
+        totalSettings.classList.remove("warning");
+        totalSettings.classList.remove("danger");
+    }
 });
