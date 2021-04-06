@@ -30,7 +30,7 @@ var bill = 0;
 
 //add an event listener for when the 'Update settings' button is pressed
 updateSettings.addEventListener("click", function(){
-    callSetting = callCostSetting.value;
+    callSetting = Number(callCostSetting.value);
     smsSetting = smsCostSetting.value;
     warningSetting = warningLevelSetting.value;
     criticalSetting = criticalLevelSetting.value;
@@ -75,8 +75,10 @@ addTheBillBtn.addEventListener("click", function(){
     }
     else if (bill >= parseFloat(warningLevelSetting.value) && bill < parseFloat(criticalLevelSetting.value)) {
         totalSettings.classList.add("warning");
+        totalSettings.classList.remove("danger");
     }
     else if (bill >= parseFloat(criticalLevelSetting.value)) {
         totalSettings.classList.add("danger");
+        totalSettings.classList.remove("warning");
     }
 }
