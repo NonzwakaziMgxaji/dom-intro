@@ -60,6 +60,14 @@ addTheBillBtn.addEventListener("click", function(){
         }
     }
 
+    if (selectedBtn === "call"  && callCostSetting.value == ""){
+        callTotal = 0;
+    }
+
+    if (selectedBtn === "sms"  && smsCostSetting.value == ""){
+        smsTotal = 0;
+    }
+
     //display totals
     callTotalSettings.innerHTML = callTotal.toFixed(2);
     smsTotalSettings.innerHTML = smsTotal.toFixed(2);
@@ -67,6 +75,7 @@ addTheBillBtn.addEventListener("click", function(){
     totalSettings.innerHTML = bill.toFixed(2);
     colors(bill);
 });
+
     //change colours
     var colors = function (bill) {
     if (bill < parseFloat(warningLevelSetting.value)){
